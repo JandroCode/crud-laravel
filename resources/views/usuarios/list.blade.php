@@ -10,7 +10,6 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Email</th>
-                        <th></th>
                     </tr>
                 </thead>
 
