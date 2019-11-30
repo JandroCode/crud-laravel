@@ -13,12 +13,11 @@
 
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('usuarios.listar');
-});
-
+//Listado de usuarios
+Route::get('/','UserController@list');
+//Formulario de usuarios
 Route::get('/form','UserController@userform');
-
+//Guardar usuarios
 Route::post('/save','UserController@save')->name('save');
 
 
