@@ -11,7 +11,7 @@ class UserController extends Controller
 
     //Listado de usuarios
     public function list(){
-        $data['users'] = Usuario::paginate(3);
+        $data['users'] = Usuario::paginate(5);
 
         return view('usuarios.list', $data);
     }
@@ -41,7 +41,21 @@ class UserController extends Controller
         Usuario::destroy($id);
 
         return back()->with('usuarioEliminado','Usuario eliminado');
+    }
 
+    //Formulario para editar usuarios
+    public function editform($id){
+        $usuario = Usuario::findOrFail($id);
+
+        return view('usuarios.editform', compact('usuario'));
+    }
+
+    //Edición de usuarios
+    public function edit(Request $request, $id){
+        $datosUsuario = request()->except((['_token', '_method']));
+        Usuario::where('id', '=', $id)->update($datosUsuario);
+
+        return back()->with('usuarioModificado','Usuario modificado');
     }
 
    
