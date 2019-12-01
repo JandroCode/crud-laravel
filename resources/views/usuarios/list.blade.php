@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <h2 class="text-center mb-5">Usuarios admin</h2>
-            <a class="btn btn-success mb-4" href="{{ url('/form') }}">Agregar usuario</a>
+            <a class="btn btn-success mb-4" href="{{ url('/form') }}">Agrega usuario</a>
             <!--Mensaje flash -->
             @if(session('usuarioEliminado'))
             <div class="alert alert-success">
